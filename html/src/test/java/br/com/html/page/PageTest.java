@@ -6,7 +6,8 @@ public class PageTest extends TestCase {
 
 	public void testBuild() {
 		Page page = new Page();
-		assertEquals("<html>nullnull</html>", page.build());
+		String expected = "<html>null<body id=\"null\"></body></html>";
+		assertTrue(expected.equals(page.build()));
 	}
 
 }
