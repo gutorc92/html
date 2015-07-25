@@ -34,9 +34,4 @@ public class LinkTest {
 		assertEquals(expected,link.build());
 	}
 
-	@Ignore
-	public void testAddElement() {
-		fail("Not yet implemented");
-	}
-
 }
