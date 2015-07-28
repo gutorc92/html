@@ -3,7 +3,6 @@ package br.com.html.elements;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class LinkTest {
@@ -20,8 +19,6 @@ public class LinkTest {
 		String id = GenerateIds.nextID();
 		link.setId(id);
 		String expected = "<a id=\"" + id + "\"></a>";
-		System.out.println(expected);
-		System.out.println(link.build());
 		assertTrue(expected.equals(link.build()));
 	}
 
@@ -30,7 +27,7 @@ public class LinkTest {
 		String id = GenerateIds.nextID();
 		link.setId(id);
 		link.setHref("testSetHref");
-		String expected = "<a id=\"" + id + "\" href=testSetHref></a>";
+		String expected = "<a id=\"" + id + "\" href=\"testSetHref\"></a>";
 		assertEquals(expected,link.build());
 	}
 

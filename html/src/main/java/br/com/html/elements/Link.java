@@ -1,8 +1,5 @@
 package br.com.html.elements;
 
-import java.util.List;
-
-import br.com.html.HtmlElement;
 
 public class Link extends Element {
 	
@@ -12,7 +9,7 @@ public class Link extends Element {
 	public String build() {
 		html = "<a " + getId();
 		if(href != null){
-			html += " href=" + href;
+			html += " href=\"" + href + "\"";
 		}
 		html += buildInsideElements();
 		html += "></a>";
