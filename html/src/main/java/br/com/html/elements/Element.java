@@ -35,5 +35,13 @@ public abstract class Element implements HtmlElement {
 		}
 		elements.add(element);
 	}
+	
+	protected String addAtribute(String attribute,Object value){
+		String html = "";
+		if(value != null){
+			html = " " + attribute + "=\"" + value.toString() + "\"";
+		}
+		return html;
+	}
 
 }

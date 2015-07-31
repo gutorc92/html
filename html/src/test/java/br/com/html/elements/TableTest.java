@@ -31,7 +31,7 @@ public class TableTest {
 		table.setId(id);
 		table.addElement(tr);
 		String expected = "<table id=\"" + id + "\">"
-				+ "<tr id=\"2\"></tr></table>";
+				+ "<tr id=\""+ idTr + "\"></tr></table>";
 		System.out.println(table.build());
 		assertEquals(expected, table.build());
 	}

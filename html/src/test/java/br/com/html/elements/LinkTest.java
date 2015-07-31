@@ -30,5 +30,22 @@ public class LinkTest {
 		String expected = "<a id=\"" + id + "\" href=\"testSetHref\"></a>";
 		assertEquals(expected,link.build());
 	}
+	
+	@Test
+	public void testWithElements() {
+		String id = GenerateIds.nextID();
+		String idP = GenerateIds.nextID();
+		Paragraph p = new Paragraph(idP,"Testing");
+		link.setId(id);
+		link.setHref("testSetHref");
+		link.addElement(p);
+		System.out.println(link.build());
+		String expected = "<a id=\"" + id + "\" href=\"testSetHref\">"
+				+ "<p id=\"" + idP + "\">Testing</p>"
+				+ "</a>";
+		assertEquals(expected,link.build());
+	}
+	
+	
 
 }
