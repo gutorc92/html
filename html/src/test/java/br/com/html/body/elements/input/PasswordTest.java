@@ -1,12 +1,12 @@
-package br.com.html.elements.input;
+package br.com.html.body.elements.input;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.html.body.elements.GenerateIds;
 import br.com.html.body.elements.input.Password;
-import br.com.html.elements.GenerateIds;
 
 public class PasswordTest {
 

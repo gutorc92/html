@@ -2,13 +2,13 @@ package br.com.html.forms;
 
 import br.com.html.HtmlElement;
 import br.com.html.body.elements.Body;
+import br.com.html.body.elements.GenerateIds;
 import br.com.html.body.elements.Paragraph;
 import br.com.html.body.elements.Table;
 import br.com.html.body.elements.Td;
 import br.com.html.body.elements.Tr;
 import br.com.html.body.elements.input.Password;
 import br.com.html.body.elements.input.Text;
-import br.com.html.elements.GenerateIds;
 import br.com.html.page.Page;
 
 public class SampleForm implements HtmlElement {

@@ -1,7 +1,7 @@
 package br.com.html.page;
 
 import br.com.html.body.elements.Body;
-import br.com.html.elements.GenerateIds;
+import br.com.html.body.elements.GenerateIds;
 
 public class Page {
 	
