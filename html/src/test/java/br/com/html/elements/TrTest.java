@@ -17,6 +17,51 @@ public class TrTest {
 	}
 	
 	@Test
+	public void testConstructorColumns(){
+		tr = new Tr(idTr, 2);
+		String expected = "<tr id=\"" + idTr + "\"></tr>";
+		assertTrue(expected.equals(tr.build()));
+		
+	}
+	
+	@Test
+	public void testConstructorColumnsAddLessThanMax(){
+		tr = new Tr(idTr, 3);
+		String idTd = GenerateIds.nextID();
+		Td td = new Td(idTd);
+		String idTd2 = GenerateIds.nextID();
+		Td td2 = new Td(idTd2);
+		tr.addElement(td);
+		tr.addElement(td2);
+		String expected = "<tr id=\"" + idTr + "\">"
+				+ "<td id=\"" + idTd + "\"></td>"
+				+ "<td id=\"" + idTd2 + "\"></td>"
+						+ "</tr>";
+		assertTrue(expected.equals(tr.build()));
+		
+	}
+	
+	@Test
+	public void testConstructorColumnsAddMoreThanMax(){
+		tr = new Tr(idTr, 2);
+		String idTd = GenerateIds.nextID();
+		Td td = new Td(idTd);
+		String idTd2 = GenerateIds.nextID();
+		Td td2 = new Td(idTd2);
+		String idTd3 = GenerateIds.nextID();
+		Td td3 = new Td(idTd3);
+		tr.addElement(td);
+		tr.addElement(td2);
+		tr.addElement(td3);
+		String expected = "<tr id=\"" + idTr + "\">"
+				+ "<td id=\"" + idTd + "\"></td>"
+				+ "<td id=\"" + idTd2 + "\"></td>"
+						+ "</tr>";
+		assertEquals(expected,tr.build());
+		
+	}
+	
+	@Test
 	public void testAddElementDifferenteOfTd() {
 		Link link = new Link(GenerateIds.nextID());
 		link.setHref("somelink");
