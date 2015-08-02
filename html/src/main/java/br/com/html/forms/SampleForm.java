@@ -9,6 +9,8 @@ import br.com.html.body.elements.Td;
 import br.com.html.body.elements.Tr;
 import br.com.html.body.elements.input.Password;
 import br.com.html.body.elements.input.Text;
+import br.com.html.head.Head;
+import br.com.html.head.elements.Title;
 import br.com.html.page.Page;
 
 public class SampleForm implements HtmlElement {
@@ -16,6 +18,7 @@ public class SampleForm implements HtmlElement {
 	private Table table;
 	private String idForm;
 	private Page page;
+	private String title;
 	
 	public SampleForm(String idForm){
 		this.idForm = idForm;
@@ -32,7 +35,7 @@ public class SampleForm implements HtmlElement {
 		Td td2 = new Td(generateSubIds());
 		Text text = new Text(generateSubIds());
 		td2.addElement(text);
-		tr.addElement(td);
+		tr.addElement(td2);
 		table.addElement(tr);
 	}
 	
@@ -45,21 +48,44 @@ public class SampleForm implements HtmlElement {
 		Td td2 = new Td(generateSubIds());
 		Password password = new Password(generateSubIds());
 		td2.addElement(password);
-		tr.addElement(td);
+		tr.addElement(td2);
 		table.addElement(tr);
 	}
 
 	public String build() {
 		// TODO Auto-generated method stub
-		Body body = new Body(generateSubIds());
-		body.addElement(table);
-		page.setBody(body);
+		page.setBody(createBody());
+		page.setHead(createHead());
 		return page.build();
 	}
 	
 	private String generateSubIds(){
 		return this.idForm + "_" + GenerateIds.nextID();
 	}
+	
+	private Body createBody(){
+		Body body = new Body(generateSubIds());
+		body.addElement(table);
+		return body;
+	}
+	
+	private Head createHead(){
+		Head head = new Head();
+		if(title != null){
+			head.addElement(new Title(title));
+		}
+		return head;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	
 	
 
 }

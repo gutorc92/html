@@ -16,5 +16,17 @@ public class SampleFormTest {
 		assertEquals(expected, sampleForm.build());
 		
 	}
+	
+	@Test
+	public void testBuildComplete() {
+		sampleForm = new SampleForm("Test");
+		sampleForm.setTitle("Testing");
+		sampleForm.addLineInpuText("Type");
+		sampleForm.addLineInpuPassword("Your Password");
+		String expected = "";
+		System.out.println(sampleForm.build());
+		assertEquals(expected, sampleForm.build());
+		
+	}
 
 }

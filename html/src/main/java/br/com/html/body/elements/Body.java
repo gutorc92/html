@@ -8,9 +8,9 @@ public class Body extends BodyElement {
 	}
 
 	public String build() {
-		html = "<body " + getId();
+		html = "<body " + getId() + ">";
 		html += buildInsideElements();
-		html += "></body>";
+		html += "</body>";
 		return html;
 	}
 
