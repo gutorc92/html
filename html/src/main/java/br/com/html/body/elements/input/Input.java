@@ -6,6 +6,7 @@ public abstract class Input extends BodyElement {
 	
 	public static final String TEXT = "text";
 	public static final String PASSWORD = "password";
+	public static final String SUBMIT = "submit";
 	protected String type;
 	protected String text;
 	protected String value;
