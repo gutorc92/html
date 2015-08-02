@@ -8,30 +8,29 @@ import org.junit.Test;
 public class TdTest {
 	
 	Td td;
+	String idTd;
 	
 	@Before
 	public void setUp(){
-		td = new Td();
+		idTd = GenerateIds.nextID();
+		td = new Td(idTd);
 	}
 
 	@Test
 	public void testBuildWithoutElements() {
-		String id = GenerateIds.nextID();
-		td.setId(id);
-		String expected = "<td id=\"" + id + "\"></td>";
+		String expected = "<td id=\"" + idTd + "\"></td>";
 		assertTrue(expected.equals(td.build()));
 	}
 	
 	@Test
 	public void testBuildWithElements() {
-		String id = GenerateIds.nextID();
-		td.setId(id);
-		Link link = new Link();
+		String idLink = GenerateIds.nextID();
+		Link link = new Link(idLink);
 		link.setHref("somelink");
 		td.addElement(link);
-		String expected = "<td id=\"" + id + "\">"
-				+ "<a id=\"null\" href=\"somelink\"></a></td>";
+		String expected = "<td id=\"" + idTd + "\">"
+				+ "<a id=\"" + idLink + "\" href=\"somelink\"></a></td>";
 		assertTrue(expected.equals(td.build()));
-	}
+	} 
 
 }

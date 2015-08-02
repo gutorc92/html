@@ -11,6 +11,15 @@ public abstract class Element implements HtmlElement {
 	protected String html;
 	protected List<HtmlElement> elements;
 	
+	public Element(String id){
+		elements = new ArrayList<HtmlElement>();
+		this.id = id;
+	}
+	
+	public Element(){
+		
+	}
+	
 	protected String getId(){
 		return "id=\"" + id + "\"";
 	}
@@ -43,5 +52,11 @@ public abstract class Element implements HtmlElement {
 		}
 		return html;
 	}
+
+	public void setElements(List<HtmlElement> elements) {
+		this.elements = elements;
+	}
+	
+	
 
 }

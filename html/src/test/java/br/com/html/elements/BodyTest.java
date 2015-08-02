@@ -9,14 +9,11 @@ public class BodyTest {
 	
 	private Body body;
 	
-	@Before
-	public void setUp(){
-		body = new Body();
-	}
 
 	@Test
 	public void testBuildWihtoutArguments() {
 		String id = GenerateIds.nextID();
+		body = new Body(id);
 		body.setId(id);
 		String expected = "<body id=\"" + id + "\"></body>";
 		assertTrue(expected.equals(body.build()));

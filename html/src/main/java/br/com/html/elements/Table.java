@@ -8,11 +8,12 @@ public class Table extends Element {
 
 	private int columns, rows;
 	
-	public Table(){
-		
+	public Table(String id){
+		super(id);
 	}
 	
-	public Table(int columns, int rows){
+	public Table(String id,int columns, int rows){
+		super(id);
 		setColumns(columns);
 		setRows(rows);
 	}

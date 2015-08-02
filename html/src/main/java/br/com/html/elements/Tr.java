@@ -5,6 +5,11 @@ import br.com.html.HtmlElement;
 
 public class Tr extends Element{
 
+	public Tr(String id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
 	public String build() {
 		html = "<tr " + getId() + ">";
 		html += buildInsideElements();

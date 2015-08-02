@@ -19,8 +19,7 @@ public class PasswordTest {
 	@Test
 	public void testBuildWithoutArguments() {
 		String id = GenerateIds.nextID();
-		password = new Password();
-		password.setId(id);
+		password = new Password(id);
 		String expected = "<input id=\"" + id + "\" type=\"password\">";
 		assertEquals(expected, password.build());
 	}
@@ -28,8 +27,7 @@ public class PasswordTest {
 	@Test
 	public void testBuildWithValue() {
 		String id = GenerateIds.nextID();
-		password = new Password("Test");
-		password.setId(id);
+		password = new Password(id,"Test");
 		String expected = "<input id=\"" + id + "\" type=\"password\" "
 				+ "value=\"Test\">";
 		System.out.println(password.build());
@@ -39,8 +37,7 @@ public class PasswordTest {
 	@Test
 	public void testBuildWithValueAndText() {
 		String id = GenerateIds.nextID();
-		password = new Password("Test","Doing test");
-		password.setId(id);
+		password = new Password(id,"Test","Doing test");
 		String expected = "<input id=\"" + id + "\" type=\"password\" "
 				+ "value=\"Test\"> Doing test";
 		System.out.println(password.build());

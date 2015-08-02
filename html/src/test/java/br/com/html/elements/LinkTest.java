@@ -8,39 +8,35 @@ import org.junit.Test;
 public class LinkTest {
 	
 	Link link;
+	String idLink;
 	
 	@Before
 	public void newLink(){
-		link = new Link();
+		idLink = GenerateIds.nextID();
+		link = new Link(idLink);
 	}
 
 	@Test
 	public void testBuildWihtoutArguments() {
-		String id = GenerateIds.nextID();
-		link.setId(id);
-		String expected = "<a id=\"" + id + "\"></a>";
+		String expected = "<a id=\"" + idLink + "\"></a>";
 		assertTrue(expected.equals(link.build()));
 	}
 
 	@Test
 	public void testSetHref() {
-		String id = GenerateIds.nextID();
-		link.setId(id);
 		link.setHref("testSetHref");
-		String expected = "<a id=\"" + id + "\" href=\"testSetHref\"></a>";
+		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\"></a>";
 		assertEquals(expected,link.build());
 	}
 	
 	@Test
 	public void testWithElements() {
-		String id = GenerateIds.nextID();
 		String idP = GenerateIds.nextID();
 		Paragraph p = new Paragraph(idP,"Testing");
-		link.setId(id);
 		link.setHref("testSetHref");
 		link.addElement(p);
 		System.out.println(link.build());
-		String expected = "<a id=\"" + id + "\" href=\"testSetHref\">"
+		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\">"
 				+ "<p id=\"" + idP + "\">Testing</p>"
 				+ "</a>";
 		assertEquals(expected,link.build());

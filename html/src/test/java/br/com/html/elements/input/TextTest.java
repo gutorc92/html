@@ -19,8 +19,7 @@ public class TextTest {
 	@Test
 	public void testBuildWithoutArguments() {
 		String id = GenerateIds.nextID();
-		text = new Text();
-		text.setId(id);
+		text = new Text(id);
 		String expected = "<input id=\"" + id + "\" type=\"text\">";
 		assertEquals(expected, text.build());
 	}
@@ -28,7 +27,7 @@ public class TextTest {
 	@Test
 	public void testBuildWithValue() {
 		String id = GenerateIds.nextID();
-		text = new Text("Test");
+		text = new Text(id,"Test");
 		text.setId(id);
 		String expected = "<input id=\"" + id + "\" type=\"text\" "
 				+ "value=\"Test\">";
@@ -39,8 +38,7 @@ public class TextTest {
 	@Test
 	public void testBuildWithValueAndText() {
 		String id = GenerateIds.nextID();
-		text = new Text("Test","Doing test");
-		text.setId(id);
+		text = new Text(id,"Test","Doing test");
 		String expected = "<input id=\"" + id + "\" type=\"text\" "
 				+ "value=\"Test\"> Doing test";
 		System.out.println(text.build());

@@ -1,6 +1,7 @@
 package br.com.html.page;
 
 import br.com.html.elements.Body;
+import br.com.html.elements.GenerateIds;
 
 public class Page {
 	
@@ -26,7 +27,7 @@ public class Page {
 	
 	private void check(){
 		if(body == null){
-			body = new Body();
+			body = new Body(GenerateIds.nextID());
 		}
 	}
 	

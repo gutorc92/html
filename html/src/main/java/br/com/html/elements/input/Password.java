@@ -2,15 +2,15 @@ package br.com.html.elements.input;
 
 public class Password extends Input {
 	
-	public Password(){
-		super(Input.PASSWORD);
+	public Password(String id){
+		super(Input.PASSWORD,id);
 	}
 	
-	public Password(String value){
-		super(Input.PASSWORD, value);
+	public Password(String id,String value){
+		super(Input.PASSWORD,id, value);
 	}
 	
-	public Password(String value,String text ){
-		super(Input.PASSWORD,value,text);
+	public Password(String id,String value,String text ){
+		super(Input.PASSWORD,id,value,text);
 	}
 }

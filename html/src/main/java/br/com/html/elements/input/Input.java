@@ -10,20 +10,25 @@ public abstract class Input extends Element {
 	protected String text;
 	protected String value;
 	
-	protected Input(String type, String value, String text ){
+	protected Input(String type,String id, String value, String text ){
+		super(id);
 		this.value = value;
 		this.type = type;
 		this.text = text;
 		
 	}
 	
-	protected Input(String type, String value ){
+	
+	
+	protected Input(String type,String id, String value ){
+		super(id);
 		this.value = value;
 		this.type = type;
 		
 	}
 	
-	protected Input(String type){
+	protected Input(String type,String id){
+		super(id);
 		this.type = type;
 	}
 	

@@ -4,17 +4,15 @@ public class Paragraph extends Element {
 
 	private String text;
 	
-	public Paragraph(String text){
-		setText(text);
-	}
+	
 	
 	public Paragraph(String id, String text){
-		setId(id);
+		super(id);
 		setText(text);
 	}
 	
-	public Paragraph(){
-		
+	public Paragraph(String id){
+		super(id);
 	}
 	
 	public String build() {

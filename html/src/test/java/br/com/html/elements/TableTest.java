@@ -8,29 +8,26 @@ import org.junit.Test;
 public class TableTest {
 
 	Table table;
+	String idTable;
 	
 	@Before
 	public void setUp(){
-		table = new Table();
+		idTable = GenerateIds.nextID();
+		table = new Table(idTable,2,2);
 	}
 	@Test
 	public void testBuild() {
-		String id = GenerateIds.nextID();
-		table.setId(id);
-		String expected = "<table id=\"" + id + "\"></table>";
+		String expected = "<table id=\"" + idTable + "\"></table>";
 		System.out.println(table.build());
 		assertEquals(expected, table.build());
 	}
 	
 	@Test
 	public void testBuildWithTrElements() {
-		String id = GenerateIds.nextID();
 		String idTr = GenerateIds.nextID();
-		Tr tr = new Tr();
-		tr.setId(idTr);
-		table.setId(id);
+		Tr tr = new Tr(idTr);
 		table.addElement(tr);
-		String expected = "<table id=\"" + id + "\">"
+		String expected = "<table id=\"" + idTable + "\">"
 				+ "<tr id=\""+ idTr + "\"></tr></table>";
 		System.out.println(table.build());
 		assertEquals(expected, table.build());

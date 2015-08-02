@@ -3,6 +3,13 @@ package br.com.html.elements;
 
 public class Link extends Element {
 	
+	public Link(String id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	private String href;
 	private String target;
 
