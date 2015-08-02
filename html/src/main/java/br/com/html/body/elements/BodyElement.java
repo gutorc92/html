@@ -5,18 +5,18 @@ import java.util.List;
 
 import br.com.html.HtmlElement;
 
-public abstract class Element implements HtmlElement {
+public abstract class BodyElement implements HtmlElement {
 	
 	protected String id;
 	protected String html;
 	protected List<HtmlElement> elements;
 	
-	public Element(String id){
+	public BodyElement(String id){
 		elements = new ArrayList<HtmlElement>();
 		this.id = id;
 	}
 	
-	public Element(){
+	public BodyElement(){
 		
 	}
 	

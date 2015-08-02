@@ -1,7 +1,7 @@
 package br.com.html.body.elements;
 
 
-public class Link extends Element {
+public class Link extends BodyElement {
 	
 	public Link(String id) {
 		super(id);

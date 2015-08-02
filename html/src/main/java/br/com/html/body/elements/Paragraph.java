@@ -1,6 +1,6 @@
 package br.com.html.body.elements;
 
-public class Paragraph extends Element {
+public class Paragraph extends BodyElement {
 
 	private String text;
 	

@@ -1,8 +1,8 @@
 package br.com.html.body.elements.input;
 
-import br.com.html.body.elements.Element;
+import br.com.html.body.elements.BodyElement;
 
-public abstract class Input extends Element {
+public abstract class Input extends BodyElement {
 	
 	public static final String TEXT = "text";
 	public static final String PASSWORD = "password";

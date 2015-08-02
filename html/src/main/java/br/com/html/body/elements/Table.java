@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import br.com.html.HtmlElement;
 
-public class Table extends Element {
+public class Table extends BodyElement {
 
 	private int columns, rows;
 	

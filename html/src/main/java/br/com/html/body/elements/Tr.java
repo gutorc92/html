@@ -3,7 +3,7 @@ package br.com.html.body.elements;
 
 import br.com.html.HtmlElement;
 
-public class Tr extends Element{
+public class Tr extends BodyElement{
 	
 	private int columns;
 

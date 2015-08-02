@@ -1,6 +1,6 @@
 package br.com.html.body.elements;
 
-public class Td extends Element {
+public class Td extends BodyElement {
 
 	public Td(String id) {
 		super(id);
