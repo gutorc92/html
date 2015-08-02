@@ -1,4 +1,4 @@
-package br.com.html.elements;
+package br.com.html.body.elements;
 
 
 import br.com.html.HtmlElement;

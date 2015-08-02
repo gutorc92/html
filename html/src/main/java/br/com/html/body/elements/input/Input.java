@@ -1,6 +1,6 @@
-package br.com.html.elements.input;
+package br.com.html.body.elements.input;
 
-import br.com.html.elements.Element;
+import br.com.html.body.elements.Element;
 
 public abstract class Input extends Element {
 	

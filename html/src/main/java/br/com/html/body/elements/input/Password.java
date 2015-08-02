@@ -1,4 +1,4 @@
-package br.com.html.elements.input;
+package br.com.html.body.elements.input;
 
 public class Password extends Input {
 	
