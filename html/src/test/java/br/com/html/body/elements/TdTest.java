@@ -22,7 +22,15 @@ public class TdTest {
 	@Test
 	public void testBuildWithoutElements() {
 		String expected = "<td id=\"" + idTd + "\"></td>";
-		assertTrue(expected.equals(td.build()));
+		assertEquals(expected,td.build());
+	}
+	
+	@Test
+	public void testBuildColspan() {
+		td.setColspan(2);
+		String expected = "<td id=\"" + idTd + "\""
+				+ " colspan=\"2\"></td>";
+		assertEquals(expected,td.build());
 	}
 	
 	@Test
@@ -33,7 +41,7 @@ public class TdTest {
 		td.addElement(link);
 		String expected = "<td id=\"" + idTd + "\">"
 				+ "<a id=\"" + idLink + "\" href=\"somelink\"></a></td>";
-		assertTrue(expected.equals(td.build()));
+		assertEquals(expected,td.build());
 	} 
 
 }
