@@ -5,6 +5,7 @@ import br.com.html.elements.Element;
 public abstract class Input extends Element {
 	
 	public static final String TEXT = "text";
+	public static final String PASSWORD = "password";
 	protected String type;
 	protected String text;
 	protected String value;
