@@ -1,16 +1,22 @@
 package br.com.html.page;
 
+import br.com.html.HtmlElement;
 import br.com.html.body.elements.Body;
-import br.com.html.body.elements.GenerateIds;
 import br.com.html.head.Head;
 
-public class Page {
+public class Page implements HtmlElement {
+	
+	private static final String bodyIdDefault = "body_id_default";
 	
 	private Head head;
 	private Body body;
 	
+	public Page(){
+		head = new Head();
+		body = new Body(bodyIdDefault);
+	}
+	
 	public String build(){
-		check();
 		String html = "<html>"
 				+ head.build() 
 				+ body.build() 
@@ -28,11 +34,7 @@ public class Page {
 		this.head = head;
 	}
 
-	private void check(){
-		if(body == null){
-			body = new Body(GenerateIds.nextID());
-		}
-	}
+	
 	
 	
 

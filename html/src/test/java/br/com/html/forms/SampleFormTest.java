@@ -10,7 +10,7 @@ public class SampleFormTest {
 	
 	@Test
 	public void testBuild() {
-		sampleForm = new SampleForm("1");
+		sampleForm = new SampleForm("1","login.php");
 		String expected = "";
 		System.out.println(sampleForm.build());
 		assertEquals(expected, sampleForm.build());
@@ -19,7 +19,7 @@ public class SampleFormTest {
 	
 	@Test
 	public void testBuildComplete() {
-		sampleForm = new SampleForm("Test");
+		sampleForm = new SampleForm("Test","login.php");
 		sampleForm.setTitle("Testing");
 		sampleForm.addLineInpuText("Type");
 		sampleForm.addLineInpuPassword("Your Password");
