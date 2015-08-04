@@ -21,8 +21,8 @@ public class SampleFormTest {
 	public void testBuildComplete() {
 		sampleForm = new SampleForm("Test","login.php");
 		sampleForm.setTitle("Testing");
-		sampleForm.addLineInpuText("Type");
-		sampleForm.addLineInpuPassword("Your Password");
+		sampleForm.addLineInpuText("Type","");
+		sampleForm.addLineInpuPassword("Your Password","");
 		String expected = "";
 		System.out.println(sampleForm.build());
 		assertEquals(expected, sampleForm.build());

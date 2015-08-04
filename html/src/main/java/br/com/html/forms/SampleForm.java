@@ -31,29 +31,17 @@ public class SampleForm implements HtmlElement {
 	}
 	
 	
-	public void addLineInpuText(String label){
+	public void addLineInpuText(String label,String value){
 		Tr tr = new Tr(generateSubIds());
-		Td td = new Td(generateSubIds());
-		Paragraph p = new Paragraph(generateSubIds(),label);
-		td.addElement(p);
-		tr.addElement(td);
-		Td td2 = new Td(generateSubIds());
-		Text text = new Text(generateSubIds());
-		td2.addElement(text);
-		tr.addElement(td2);
+		tr.addElement(createTdWithParagraph(label));
+		tr.addElement(createTdWithInputText(value));
 		table.addElement(tr);
 	}
 	
-	public void addLineInpuPassword(String label){
+	public void addLineInpuPassword(String label,String value){
 		Tr tr = new Tr(generateSubIds());
-		Td td = new Td(generateSubIds());
-		Paragraph p = new Paragraph(generateSubIds(),label);
-		td.addElement(p);
-		tr.addElement(td);
-		Td td2 = new Td(generateSubIds());
-		Password password = new Password(generateSubIds());
-		td2.addElement(password);
-		tr.addElement(td2);
+		tr.addElement(createTdWithParagraph(label));
+		tr.addElement(createTdWithInputPassword(value));
 		table.addElement(tr);
 	}
 
@@ -66,6 +54,12 @@ public class SampleForm implements HtmlElement {
 	
 	private String generateSubIds(){
 		return this.idForm + "_" + GenerateIds.nextID();
+	}
+	
+	private void createTitleInTable(){
+		Tr tr = new Tr(generateSubIds());
+		tr.addElement(createTdWithParagraph(title));
+		table.addElement(0, tr);
 	}
 	
 	private void createButton(){
@@ -83,8 +77,9 @@ public class SampleForm implements HtmlElement {
 	}
 	
 	private Body createBody(){
-		Body body = new Body(generateSubIds());
+		createTitleInTable();
 		createButton();
+		Body body = new Body(generateSubIds());
 		form.addElement(table);
 		body.addElement(form);
 		return body;
@@ -106,6 +101,26 @@ public class SampleForm implements HtmlElement {
 		this.title = title;
 	}
 	
+	protected Td createTdWithParagraph(String label){
+		Td td = new Td(generateSubIds());
+		Paragraph p = new Paragraph(generateSubIds(),label);
+		td.addElement(p);
+		return td;
+	}
+	
+	protected Td createTdWithInputPassword(String value){
+		Td td = new Td(generateSubIds());
+		Password password = new Password(generateSubIds(),value);
+		td.addElement(password);
+		return td;
+	}
+	
+	protected Td createTdWithInputText(String value){
+		Td td = new Td(generateSubIds());
+		Text text = new Text(generateSubIds(),value);
+		td.addElement(text);
+		return td;
+	}
 	
 	
 
