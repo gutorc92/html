@@ -22,7 +22,8 @@ public class LinkTest {
 	@Test
 	public void testBuildWihtoutArguments() {
 		String expected = "<a id=\"" + idLink + "\"></a>";
-		assertTrue(expected.equals(link.build()));
+		System.out.println(link.build());
+		assertEquals(expected,link.build());
 	}
 
 	@Test

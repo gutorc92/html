@@ -2,6 +2,8 @@ package br.com.html.body.elements;
 
 public class Form extends BodyElement {
 	
+	private static final String HTML_TAG = "form";
+	
 	public static final String POST = "post";
 	public static final String GET = "get";
 	
@@ -13,17 +15,16 @@ public class Form extends BodyElement {
 		setAction(action);
 		setMethod(method);
 	}
-
-	public String build() {
-		html = "<form " + getId();
-		html += addAtribute("action", action);
-		html += addAtribute("method", method);
-		html += ">";
-		html += buildInsideElements();
-		html += "</form>";
-		
-		return html;
+	
+	@Override
+	protected String addAtributes() {
+		// TODO Auto-generated method stub
+		String atributesClass = super.addAtributes();
+		atributesClass += addAtribute("action", action);
+		atributesClass += addAtribute("method", method);
+		return atributesClass;
 	}
+
 
 	public String getAction() {
 		return action;
@@ -39,6 +40,27 @@ public class Form extends BodyElement {
 
 	public void setMethod(String method) {
 		this.method = method;
+	}
+
+
+	@Override
+	protected boolean hasCloseTag() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
+	@Override
+	protected String tag() {
+		// TODO Auto-generated method stub
+		return HTML_TAG;
+	}
+
+
+	@Override
+	protected boolean hasToBuildInsideElements() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 	
 	

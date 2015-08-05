@@ -22,7 +22,7 @@ public class SelectTest {
 		Option option = new Option(optionId,"1","Test");
 		select.addElement(option);
 		String expected = "<select id=\"" + idSelect + "\">"
-				+ "<option value=\"1\">Test</option>"
+				+ "<option id=\""+ optionId + "\" value=\"1\">Test</option>"
 				+ "</select>";
 		assertEquals(expected,select.build());
 		

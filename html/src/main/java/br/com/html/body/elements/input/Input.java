@@ -7,15 +7,15 @@ public abstract class Input extends BodyElement {
 	public static final String TEXT = "text";
 	public static final String PASSWORD = "password";
 	public static final String SUBMIT = "submit";
+	private static final String HTML_TAG = "input";
 	protected String type;
-	protected String text;
 	protected String value;
 	
 	protected Input(String type,String id, String value, String text ){
 		super(id);
 		this.value = value;
 		this.type = type;
-		this.text = text;
+		this.insideText = text;
 		
 	}
 	
@@ -34,22 +34,16 @@ public abstract class Input extends BodyElement {
 	}
 	
 	
-	public String build() {
-		html = "<input " + getId();
-		html += addType();
-		html += addValue();
-		html += ">";
-		html += addText();
-		return html;
+	
+	@Override
+	protected String addAtributes() {
+		// TODO Auto-generated method stub
+		String htmlAtt = super.addAtributes();
+		htmlAtt += addType();
+		htmlAtt += addValue();
+		return htmlAtt;
 	}
 	
-	private String addText(){
-		String html = "";
-		if(text != null){
-			html = " " + text;
-		}
-		return html;
-	}
 	
 	private String addValue(){
 		String html = "";
@@ -67,4 +61,29 @@ public abstract class Input extends BodyElement {
 		return html;
 	}
 
+
+
+	@Override
+	protected boolean hasCloseTag() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	protected String tag() {
+		// TODO Auto-generated method stub
+		return HTML_TAG;
+	}
+
+
+
+	@Override
+	protected boolean hasToBuildInsideElements() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 }

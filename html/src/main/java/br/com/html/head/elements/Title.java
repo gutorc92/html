@@ -17,5 +17,35 @@ public class Title extends HeadElement {
 		
 		return html;
 	}
+
+	@Override
+	protected boolean hasCloseTag() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected String tag() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected boolean hasToBuildInsideElements() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean hasInsideText() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected String insideText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

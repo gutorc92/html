@@ -14,7 +14,7 @@ public class PageTest extends TestCase {
 		Head head = new Head();
 		page.setBody(body);
 		page.setHead(head);
-		String expected = "<html><head></head><body id=\""+ idBody + "\"></body></html>";
+		String expected = "<html><head ></head><body id=\""+ idBody + "\"></body></html>";
 		System.out.println(page.build());
 		assertEquals(expected,page.build());
 	}

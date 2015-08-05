@@ -2,6 +2,7 @@ package br.com.html.body.elements;
 
 public class Td extends BodyElement {
 	
+	private static final String HTML_TAG = "td";
 	private int colspan;
 
 	public Td(String id) {
@@ -24,15 +25,37 @@ public class Td extends BodyElement {
 		return atribute;
 	}
 
+	
+	@Override
+	protected String addAtributes() {
+		// TODO Auto-generated method stub
+		String htmlAtributes = super.addAtributes();
+		htmlAtributes += buildConspan();
+		return htmlAtributes;
+	}
 
 
-	public String build() {
-		html = "<td " + getId();
-		html += buildConspan();
-		html		+= ">";
-		html += buildInsideElements();
-		html += "</td>";
-		return html;
+
+	@Override
+	protected boolean hasCloseTag() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
+
+	@Override
+	protected String tag() {
+		// TODO Auto-generated method stub
+		return HTML_TAG;
+	}
+
+
+
+	@Override
+	protected boolean hasToBuildInsideElements() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

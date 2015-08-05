@@ -3,9 +3,8 @@ package br.com.html.body.elements;
 public class Option extends BodyElement {
 	
 	private String value;
-	private String text;
 	
-	
+	private static final String HTML_TAG = "option";
 	
 	public String getValue() {
 		return value;
@@ -17,8 +16,11 @@ public class Option extends BodyElement {
 
 	public Option(){
 		super();
-		text = "";
 		value = "";
+	}
+	
+	public Option(String id){
+		super(id);
 	}
 	
 	public Option(String id, String value, String text) {
@@ -27,21 +29,30 @@ public class Option extends BodyElement {
 		setText(text);
 	}
 
-	public String getText() {
-		return text;
+	@Override
+	protected boolean hasCloseTag() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	@Override
+	protected String tag() {
+		// TODO Auto-generated method stub
+		return HTML_TAG;
 	}
 
-
-	public String build() {
-		html = "<option";
-		html += addAtribute("value", value);
-		html += ">" + text;
-		html += "</option>";
-		return html;
+	@Override
+	protected boolean hasToBuildInsideElements() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	protected String addAtributes() {
+		// TODO Auto-generated method stub
+		String atributesClass = super.addAtributes();
+		atributesClass += addAtribute("value", value);
+		return atributesClass;
 	}
 	
 	

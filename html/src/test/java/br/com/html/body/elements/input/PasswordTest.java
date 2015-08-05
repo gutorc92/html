@@ -40,7 +40,7 @@ public class PasswordTest {
 		String id = GenerateIds.nextID();
 		password = new Password(id,"Test","Doing test");
 		String expected = "<input id=\"" + id + "\" type=\"password\" "
-				+ "value=\"Test\"> Doing test";
+				+ "value=\"Test\">Doing test";
 		System.out.println(password.build());
 		assertEquals(expected, password.build());
 	}

@@ -6,6 +6,8 @@ import br.com.html.HtmlElement;
 
 public class Table extends BodyElement {
 
+	private static final String HTML_TAG = "table";
+	
 	private int columns, rows;
 	
 	public Table(String id){
@@ -59,6 +61,24 @@ public class Table extends BodyElement {
 		if(columns >= 1){
 			this.columns = columns;
 		}
+	}
+
+	@Override
+	protected boolean hasCloseTag() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	protected String tag() {
+		// TODO Auto-generated method stub
+		return HTML_TAG;
+	}
+
+	@Override
+	protected boolean hasToBuildInsideElements() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

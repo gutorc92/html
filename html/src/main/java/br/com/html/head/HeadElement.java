@@ -15,5 +15,23 @@ public abstract class HeadElement extends Element {
 		}
 	}
 	
+	@Override
+	protected boolean hasInsideText() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	protected String insideText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	protected String addAtributes() {
+		// TODO Auto-generated method stub
+		return "";
+	}
+	
 	
 }

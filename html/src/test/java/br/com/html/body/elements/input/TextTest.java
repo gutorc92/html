@@ -41,7 +41,7 @@ public class TextTest {
 		String id = GenerateIds.nextID();
 		text = new Text(id,"Test","Doing test");
 		String expected = "<input id=\"" + id + "\" type=\"text\" "
-				+ "value=\"Test\"> Doing test";
+				+ "value=\"Test\">Doing test";
 		System.out.println(text.build());
 		assertEquals(expected, text.build());
 	}

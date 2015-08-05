@@ -13,7 +13,7 @@ public class HeadTest {
 	@Test
 	public void testBuild() {
 		Head head = new Head();
-		String expected = "<head></head>";
+		String expected = "<head ></head>";
 		assertEquals(expected, head.build());
 	}
 	
@@ -22,7 +22,7 @@ public class HeadTest {
 		Head head = new Head();
 		Td td = new Td(GenerateIds.nextID());
 		head.addElement(td);
-		String expected = "<head></head>";
+		String expected = "<head ></head>";
 		assertEquals(expected, head.build());
 	}
 	
@@ -31,7 +31,7 @@ public class HeadTest {
 		Head head = new Head();
 		Title title = new Title("Test");
 		head.addElement(title);
-		String expected = "<head><title>Test</title></head>";
+		String expected = "<head ><title>Test</title></head>";
 		assertEquals(expected, head.build());
 	}
 
