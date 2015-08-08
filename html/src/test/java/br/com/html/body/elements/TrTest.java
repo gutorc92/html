@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.html.GenerateIds;
 import br.com.html.body.elements.Link;
 import br.com.html.body.elements.Td;
 import br.com.html.body.elements.Tr;

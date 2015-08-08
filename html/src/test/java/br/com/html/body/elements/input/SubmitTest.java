@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import br.com.html.body.elements.GenerateIds;
+import br.com.html.GenerateIds;
 
 public class SubmitTest {
 

@@ -1,4 +1,4 @@
-package br.com.html.body.elements;
+package br.com.html;
 
 public  class GenerateIds {
 	

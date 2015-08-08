@@ -1,13 +1,14 @@
 package br.com.html.forms;
 
+import br.com.html.GenerateIds;
 import br.com.html.HtmlElement;
 import br.com.html.body.elements.Body;
 import br.com.html.body.elements.Form;
-import br.com.html.body.elements.GenerateIds;
 import br.com.html.body.elements.Paragraph;
 import br.com.html.body.elements.Table;
 import br.com.html.body.elements.Td;
 import br.com.html.body.elements.Tr;
+import br.com.html.body.elements.input.Email;
 import br.com.html.body.elements.input.Password;
 import br.com.html.body.elements.input.Submit;
 import br.com.html.body.elements.input.Text;
@@ -42,6 +43,13 @@ public class SampleForm implements HtmlElement {
 		Tr tr = new Tr(generateSubIds());
 		tr.addElement(createTdWithParagraph(label));
 		tr.addElement(createTdWithInputPassword(value));
+		table.addElement(tr);
+	}
+	
+	public void addLineInputEmail(String label,String value){
+		Tr tr = new Tr(generateSubIds());
+		tr.addElement(createTdWithParagraph(label));
+		tr.addElement(createTdWithInputEmail(value));
 		table.addElement(tr);
 	}
 
@@ -122,6 +130,12 @@ public class SampleForm implements HtmlElement {
 		return td;
 	}
 	
+	protected Td createTdWithInputEmail(String value){
+		Td td = new Td(generateSubIds());
+		Email email = new Email(generateSubIds(),value);
+		td.addElement(email);
+		return td;
+	}
 	
 
 }
