@@ -29,7 +29,6 @@ public class TextTest {
 	public void testBuildWithValue() {
 		String id = GenerateIds.nextID();
 		text = new Text(id,"Test");
-		text.setId(id);
 		String expected = "<input id=\"" + id + "\" type=\"text\" "
 				+ "value=\"Test\">";
 		System.out.println(text.build());

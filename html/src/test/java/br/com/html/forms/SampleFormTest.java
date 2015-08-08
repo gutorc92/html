@@ -11,7 +11,17 @@ public class SampleFormTest {
 	@Test
 	public void testBuild() {
 		sampleForm = new SampleForm("1","login.php");
-		String expected = "";
+		String expected = "<html><head ></head>"
+				+ "<body id=\"1_9\"><form id=\"1_1\" action=\"login.php\" method=\"post\">"
+						+ "<table id=\"1_0\"><tr id=\"1_2\">"
+								+ "<td id=\"1_3\"><p id=\"1_4\">"
+										+ "</p></td>"
+										+ "</tr>"
+										+ "<tr id=\"1_5\"><td id=\"1_6\" colspan=\"2\">"
+												+ "<input id=\"1_8\" type=\"submit\" value=\"Send\">"
+														+ "</td>"
+														+ "</tr>"
+														+ "</table></form></body></html>";
 		System.out.println(sampleForm.build());
 		assertEquals(expected, sampleForm.build());
 		

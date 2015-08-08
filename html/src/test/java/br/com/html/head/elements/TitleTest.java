@@ -9,7 +9,7 @@ public class TitleTest {
 	@Test
 	public void testBuild() {
 		Title title = new Title("Test");
-		String expected = "<title>Test</title>";
+		String expected = "<title >Test</title>";
 		assertEquals(expected,title.build());
 	}
 

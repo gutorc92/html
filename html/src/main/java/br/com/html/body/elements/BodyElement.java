@@ -7,8 +7,6 @@ import br.com.html.HtmlElement;
 public abstract class BodyElement extends Element implements HtmlElement {
 	
 	protected String id;
-	protected String insideText;
-	
 	
 	public BodyElement(String id){
 		super();
@@ -27,23 +25,12 @@ public abstract class BodyElement extends Element implements HtmlElement {
 		this.id = id;
 	}
 	
-	public void setText(String text){
-		this.insideText = text;
-	}
 	
 	protected String addAtributes(){
 		return getId();
 	}
 	
-	protected boolean hasInsideText(){
-		if(insideText != null){
-			return true;
-		}
-		return false;
-	}
-	protected String insideText(){
-		return insideText;
-	}
+	
 	
 	
 	

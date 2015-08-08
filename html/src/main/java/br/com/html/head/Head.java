@@ -31,11 +31,6 @@ public class Head extends HeadElement {
 		return false;
 	}
 
-	@Override
-	protected String insideText() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 
 }

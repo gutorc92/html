@@ -31,7 +31,7 @@ public class HeadTest {
 		Head head = new Head();
 		Title title = new Title("Test");
 		head.addElement(title);
-		String expected = "<head ><title>Test</title></head>";
+		String expected = "<head ><title >Test</title></head>";
 		assertEquals(expected, head.build());
 	}
 

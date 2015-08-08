@@ -4,30 +4,23 @@ import br.com.html.head.HeadElement;
 
 public class Title extends HeadElement {
 	
-	private String title;
+	private static final String HTML_TAG = "title";
 	
 	public Title(String title){
-		this.title = title;
+		setText(title);
 	}
 
-	public String build() {
-		// TODO Auto-generated method stub
-		html = "<title>" + title + "</title>";
-				
-		
-		return html;
-	}
-
+	
 	@Override
 	protected boolean hasCloseTag() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	protected String tag() {
 		// TODO Auto-generated method stub
-		return null;
+		return HTML_TAG;
 	}
 
 	@Override
@@ -39,13 +32,9 @@ public class Title extends HeadElement {
 	@Override
 	protected boolean hasInsideText() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	@Override
-	protected String insideText() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 }

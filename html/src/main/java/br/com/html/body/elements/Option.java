@@ -14,10 +14,6 @@ public class Option extends BodyElement {
 		this.value = value;
 	}
 
-	public Option(){
-		super();
-		value = "";
-	}
 	
 	public Option(String id){
 		super(id);

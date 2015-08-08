@@ -11,6 +11,7 @@ public  abstract class Element implements HtmlElement {
 	protected boolean insideElements;
 	protected boolean hasCloseTag;
 	protected String tag;
+	protected String insideText;
 	
 	public Element(){
 		elements = new ArrayList<HtmlElement>();
@@ -59,6 +60,20 @@ public  abstract class Element implements HtmlElement {
 		return globalAtributes;
 	}
 	
+	public void setText(String text){
+		this.insideText = text;
+	}
+	
+	protected boolean hasInsideText(){
+		if(insideText != null){
+			return true;
+		}
+		return false;
+	}
+	protected String insideText(){
+		return insideText;
+	}
+	
 	private String closeTag(){
 		return "</" + tag() + ">";
 	}
@@ -68,8 +83,6 @@ public  abstract class Element implements HtmlElement {
 	protected abstract boolean hasCloseTag();
 	protected abstract String tag();
 	protected abstract boolean hasToBuildInsideElements();
-	protected abstract boolean hasInsideText();
-	protected abstract String insideText();
 	
 	public String build(){
 		html = "<" + tag() + " ";
