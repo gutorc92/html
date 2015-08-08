@@ -29,7 +29,7 @@ public class LinkTest {
 	@Test
 	public void testSetHref() {
 		link.setHref("testSetHref");
-		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\"></a>";
+		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\" ></a>";
 		assertEquals(expected,link.build());
 	}
 	
@@ -40,9 +40,47 @@ public class LinkTest {
 		link.setHref("testSetHref");
 		link.addElement(p);
 		System.out.println(link.build());
-		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\">"
+		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\" >"
 				+ "<p id=\"" + idP + "\">Testing</p>"
 				+ "</a>";
+		assertEquals(expected,link.build());
+	}
+	
+	@Test
+	public void testTarget() {
+		String idP = GenerateIds.nextID();
+		Paragraph p = new Paragraph(idP,"Testing");
+		link.setHref("testSetHref");
+		link.addElement(p);
+		link.setTarget(Link.TARGET_SELF);
+		String expected = "<a id=\"" + idLink + "\" href=\"testSetHref\" "
+				+ " target=\"_self\" >"
+				+ "<p id=\"" + idP + "\">Testing</p>"
+				+ "</a>";
+		assertEquals(expected,link.build());
+	}
+	
+	@Test
+	public void testClassAtribute() {
+		link.setHref("testSetHref");
+		link.setClassOfElement("classtest");
+		String expected = "<a  class=\"classtest\" id=\"" + idLink + "\" "
+				+ "href=\"testSetHref\" >"
+				+ "</a>";
+		System.out.println(expected);
+		System.out.println(link.build());
+		assertEquals(expected,link.build());
+	}
+	
+	@Test
+	public void testStyleAtribute() {
+		link.setHref("testSetHref");
+		link.setSytle("test");
+		String expected = "<a  style=\"test\" id=\"" + idLink + "\" "
+				+ "href=\"testSetHref\" >"
+				+ "</a>";
+		System.out.println(expected);
+		System.out.println(link.build());
 		assertEquals(expected,link.build());
 	}
 	

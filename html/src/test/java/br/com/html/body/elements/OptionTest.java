@@ -20,7 +20,7 @@ public class OptionTest {
 	public void testConstructorWithElements() {
 		String id = GenerateIds.nextID();
 		option = new Option(id,"1","Test");
-		String expected = "<option id=\""+ id + "\" value=\"1\">Test</option>";
+		String expected = "<option id=\""+ id + "\" value=\"1\" >Test</option>";
 		assertEquals(expected, option.build());
 	}
 	

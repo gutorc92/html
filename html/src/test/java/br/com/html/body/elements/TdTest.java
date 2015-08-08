@@ -29,7 +29,7 @@ public class TdTest {
 	public void testBuildColspan() {
 		td.setColspan(2);
 		String expected = "<td id=\"" + idTd + "\""
-				+ " colspan=\"2\"></td>";
+				+ " colspan=\"2\" ></td>";
 		assertEquals(expected,td.build());
 	}
 	
@@ -40,7 +40,7 @@ public class TdTest {
 		link.setHref("somelink");
 		td.addElement(link);
 		String expected = "<td id=\"" + idTd + "\">"
-				+ "<a id=\"" + idLink + "\" href=\"somelink\"></a></td>";
+				+ "<a id=\"" + idLink + "\" href=\"somelink\" ></a></td>";
 		assertEquals(expected,td.build());
 	} 
 

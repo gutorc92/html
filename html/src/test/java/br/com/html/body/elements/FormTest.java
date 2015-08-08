@@ -10,8 +10,8 @@ public class FormTest {
 	public void testBuild() {
 		String id = GenerateIds.nextID();
 		Form form = new Form(id,"login.php",Form.POST);
-		String expected = "<form id=\"" + id + "\" action=\"login.php\""
-				+ " method=\"post\">"
+		String expected = "<form id=\"" + id + "\" action=\"login.php\" "
+				+ " method=\"post\" >"
 				+ "</form>";
 		assertEquals(expected,form.build());
 	}
@@ -23,8 +23,8 @@ public class FormTest {
 		Paragraph p = new Paragraph(pId, "Testing");
 		Form form = new Form(id,"login.php",Form.GET);
 		form.addElement(p);
-		String expected = "<form id=\"" + id + "\" action=\"login.php\""
-				+ " method=\"get\">"
+		String expected = "<form id=\"" + id + "\" action=\"login.php\" "
+				+ " method=\"get\" >"
 				+ "<p id=\"" + pId + "\">Testing</p>"
 				+ "</form>";
 		assertEquals(expected,form.build());

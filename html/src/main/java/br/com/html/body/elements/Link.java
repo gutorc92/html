@@ -5,6 +5,11 @@ public class Link extends BodyElement {
 	
 	private static final String HTML_TAG = "a";
 	
+	public static final String TARGET_BLANK = "_blank";
+	public static final String TARGET_SELF = "_self"; 	
+	public static final String TARGET_PARENT = "_parent"; 	
+	public static final String TARGET_TOP = "_top"; 	
+	
 	private String href;
 	private String target;
 	

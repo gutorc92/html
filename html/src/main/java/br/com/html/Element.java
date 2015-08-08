@@ -34,7 +34,7 @@ public  abstract class Element implements HtmlElement {
 	protected String addAtribute(String attribute,Object value){
 		String html = "";
 		if(value != null){
-			html = " " + attribute + "=\"" + value.toString() + "\"";
+			html = " " + attribute + "=\"" + value.toString() + "\" ";
 		}
 		return html;
 	}
@@ -51,10 +51,17 @@ public  abstract class Element implements HtmlElement {
 		this.classOfElement = classOfElement;
 	}
 	
+	public void setSytle(String style){
+		this.style = style;
+	}
+	
 	private String globalAtributes(){
 		String globalAtributes = "";
 		if(style != null){
 			globalAtributes += addAtribute("style", style);
+		}
+		if(classOfElement != null){
+			globalAtributes += addAtribute("class", classOfElement);
 		}
 		
 		return globalAtributes;
