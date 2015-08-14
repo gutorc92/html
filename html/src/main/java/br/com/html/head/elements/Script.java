@@ -5,7 +5,12 @@ import br.com.html.head.HeadElement;
 public class Script extends HeadElement {
 
 	private final String HTML_TAG = "script";
+	private String src;
 	
+	public Script(String script, String src){
+		setText(script);
+		setSrc(src);
+	}
 	
 	public Script(String script) {
 		setText(script);
@@ -29,5 +34,26 @@ public class Script extends HeadElement {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	private void setSrc(String src) {
+		if(src == null){
+			throw new NullPointerException("Src cannot be a null object");
+		}
+		this.src = src;
+	}
+
+	@Override
+	protected String addAtributes() {
+		// TODO Auto-generated method stub
+		String html = super.addAtributes();
+		html += addAtribute("src", this.src);
+		return html;
+	}
+	
+	public String getSrc(){
+		return this.src;
+	}
+	
+	
 
 }
